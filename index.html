@@ -12,6 +12,7 @@ this is the main web page for web detective
         <a href="Features.html">Features</a>
 
 
+        <!-- <a href="Services.html"> fix the drop down when services is clicked  -->
         <div class="dropdown">
           <button class="dropbtn">Services
             <i>&#9660</i>
@@ -26,6 +27,9 @@ this is the main web page for web detective
         <a href="About.html">About</a>
       </div>
 
+      <!--
+        TItel doesnt work for some reason FIXXX
+      -->
       <title>
 
       </title>
@@ -42,18 +46,64 @@ this is the main web page for web detective
 
   <body>
 
-    <div class="url_getter">
-      <p> Enter your website URL</p>
 
-      <form  action="main.js">
-        URL:
-        <input type="url" required name="website" onfocus="this.value=''" value="https://www.example.com">
-        <input type="button" class="button" value= "Sherlock Detect"><br>
-        <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
+    <center>
+      <div class="url_getter">
+        <p> Enter your website URL</p>
+        <form  action="main.js">
+          URL:
+          <input type="url" required class="url" name="website" placeholder='https://www.example.com' onclick="">
+          <input type="submit" class="button" value="Sherlock Detect"><br>
+          <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
+        </form><br><br>
+        </div>
+        <h2> Sample Test </h2>
+      </center>
 
-      </form>
+      <table>
+        <tr>
+          <th>Scan Success</th>
+          <th>Test Performed</th>
+          <th>Rating</th>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Finger Print web server software</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Check the security of HTTP cookies</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Check the SSL certificate of the server</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Check for SQL Injection</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Check for Cross-Site Scripting</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>YES</td>
+          <td>Check for OS command Injection</td>
+          <td>3</td>
+        </tr>
+      </table>
 
 
-      </div>
+
+
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="main.js"></script>
+
   </body>
 </html>

@@ -79,3 +79,38 @@
         margin: 4px 2px;
         cursor: pointer;
       }
+      .url {
+        padding: 9px 100px 9px 0px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      td {
+        border: 3px solid #4CAF50;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #333;
+      }
+      tr:hover {
+          background-color: red;
+      }
