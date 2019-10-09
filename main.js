@@ -1,9 +1,5 @@
 // steps
 
-int main(){
-
-}
-
 // connect html and js
 // connect to the internet
   // make js understand html button click
@@ -22,3 +18,8 @@ int main(){
       // more and
 // show the report in the page
 // downlodable report function
+
+
+int main(){
+
+}
