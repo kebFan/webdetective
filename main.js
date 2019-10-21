@@ -19,7 +19,27 @@
 // show the report in the page
 // downlodable report function
 
+  //API_KEY: "AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA",
 
-int main(){
+  URL = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA"
+  DATA = JSON.stringify({
+    "client": {
+      "clientId":      "kebsafe",
+      "clientVersion": "1.5.2"
+    },
+    "threatInfo": {
+      "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+      "platformTypes":    ["WINDOWS"],
+      "threatEntryTypes": ["URL"],
+      "threatEntries": [{"url": "http://www.urltocheck1.org/"}]
+    }
+  })
 
-}
+  $.ajax({
+    type: "POST",
+    url: URL,
+    data: DATA,
+    success: data => alert(JSON.stringify(data)),
+    dataType: "json",
+    contentType : "application/json"
+  });
