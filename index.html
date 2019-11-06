@@ -27,42 +27,33 @@ this is the main web page for web detective
         <a href="Contact.html">Contact</a>
         <a href="About.html">About</a>
       </div>
-
       <!--
         TItel doesnt work for some reason FIXXX
       -->
       <title>
-
       </title>
-
       <div style="padding-left:16px">
         <h2>Web Detective</h2>
         <p>Some content..</p>
       </div>
-
       <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
 
-
   <body>
-
-
     <center>
       <div class="url_getter">
         <p> Enter your website URL</p>
-        <form  action="main.js">
+        <form action="main.js">
           URL:
-          <input type="url" required class="url" name="website" placeholder='https://www.example.com' onclick="">
+          <input type="url" required class="url" name="website" placeholder='https://www.example.com' onclick="myFunction()">
           <input type="submit" class="button" value="Sherlock Detect"><br>
           <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
         </form><br><br>
         </div>
         <h2> Sample Test </h2>
-      </center>
 
-      <button type="button" id ="post-btn"> POST DATA</button>
-
+        <div id="sample">
       <table>
         <tr>
           <th>Scan Success</th>
@@ -100,12 +91,15 @@ this is the main web page for web detective
           <td>3</td>
         </tr>
       </table>
-
-
-
-
+      </div>
+    </center>
 
     <!--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
       <script src="main.js"></script>
+      <script>
+        function myFunction() {
+          document.getElementById("sample").style.display = "none";
+        }
+      </script>
   </body>
 </html>

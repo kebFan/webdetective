@@ -21,7 +21,7 @@
 
   //API_KEY: "AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA",
 
-  URL = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA"
+  URL = "https://www.hackthissite.org"
   DATA = JSON.stringify({
     "client": {
       "clientId":      "kebsafe",
