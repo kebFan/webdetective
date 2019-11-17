@@ -19,73 +19,89 @@
 // show the report in the page
 // downlodable report function
 
+// variables used to calculate final score
+var score = 0;
+var count = 0;   // # of tests applied
 
-URL = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA";
-DATA = JSON.stringify({
-"client": {
-  "clientId":      "kebsafe",
-  "clientVersion": "0.0.1"
-},
-"threatInfo": {
-  "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
-  "platformTypes":    ["WINDOWS"],
-  "threatEntryTypes": ["URL"],
-  "threatEntries": [
-    {"url": "http://www.urltocheck1.org/"},
-    {"url": "http://www.urltocheck2.org/"},
-    {"url": "http://www.urltocheck3.com/"}
-  ]
+
+// connect are report from google safe browsing api
+function googleSafeBrowsingAPI(){
+
+  URL = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyCGvM7QqPCQPLKBIMaODssyWLqRNjNyJiA";
+  DATA = JSON.stringify({
+  "client": {
+    "clientId":      "kebsafe",
+    "clientVersion": "0.0.1"
+  },
+  "threatInfo": {
+    "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+    "platformTypes":    ["WINDOWS"],
+    "threatEntryTypes": ["URL"],
+    "threatEntries": [
+      {"url": "http://www.urltocheck1.org/"},
+      {"url": "http://www.urltocheck2.org/"},
+      {"url": "http://www.urltocheck3.com/"}
+    ]
+  }
+  });
+
+  $.ajax({
+  type: "POST",
+  url: URL,
+  data: DATA,
+  success: data => console.log(JSON.stringify(data)),
+  dataType: "json",
+  contentType : "application/json"
+  });
+
 }
-});
-
-$.ajax({
-type: "POST",
-url: URL,
-data: DATA,
-success: data => console.log(JSON.stringify(data)),
-dataType: "json",
-contentType : "application/json"
-});
-
-
-// ------------------------------------------------------------------------------------------
 // virus total
-//0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd
-// var url = "https://www.virustotal.com/vtapi/v2/url/scan";
-// var params = JSON.stringify({'apikey': '0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd', 'url':"https://www.hackthissite.org"});
-// var xhr = new XMLHttpRequest();
-// xhr.open("POST", url, true);
-//
-// //Send the proper header information along with the request
-// //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-// xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//
-// xhr.send(params);
+// connect and report from VIRUS TOTAL API
+function virusTotalAPI(){
+  var urlinput = "https://www.hackthissite.org";
+  URL = "https://www.virustotal.com/vtapi/v2/url/report?apikey=0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd&resource="+ urlinput;
+  var vsreport;
+
+  $.ajax({
+  type: "GET",
+  url: URL,
+  success: function(data){
+  //  console.log(JSON.stringify(data));
+    //vsreport = data;
+    vsreport = data.;
+  },
+  dataType: "json",
+  });
+
+  return vsreport;
+}
+
+// vertify the website url is secure with https or not
+function vertifyHttps(urllink){
+  //
+}
+
+// get website url the user entered on our website
+function getuserURL(){
+  // return url
+}
+
+// a function to print a report in a readable format
+function printfy(){
+
+}
+
+// a main function to produce security report on a given url
+function produceReport(){
+  // this is were most functions are called
+
+  getuserURL();
+  vertifyHttps();
+  googleSafeBrowsingAPI();
+  virusTotalAPI();
+  printify();
+}
 
 
-// ---------------------------------
 
-// var url = "https://www.virustotal.com/vtapi/v2/url/report";
-// var params = JSON.stringify({'apikey': '0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd', 'resource':'https://www.hackthissite.org'});
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", url, true);
-//
-// //Send the proper header information along with the request
-// //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-// //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//
-// xhr.send(null);
-//----------------------------------------------
-
-
-
-
-var urlinput = "https://www.hackthissite.org";
-URL = "https://www.virustotal.com/vtapi/v2/url/report?apikey=0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd&resource="+ urlinput;
-
-$.ajax({
-type: "GET",
-url: URL,
-success: data => console.log(JSON.stringify(data)),
-dataType: "json",
-});
+console.log(virusTotalAPI());
