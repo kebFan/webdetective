@@ -22,7 +22,7 @@
 // variables used to calculate final score
 var score = 0;
 var count = 0;   // # of tests applied
-
+var vtreport;   // virus total report
 
 // connect are report from google safe browsing api
 function googleSafeBrowsingAPI(){
@@ -60,20 +60,18 @@ function googleSafeBrowsingAPI(){
 function virusTotalAPI(){
   var urlinput = "https://www.hackthissite.org";
   URL = "https://www.virustotal.com/vtapi/v2/url/report?apikey=0d290ee2f641ce2e72eae2abf94b8032127818a185398d39e4a1379e9a1172fd&resource="+ urlinput;
-  var vsreport;
 
   $.ajax({
   type: "GET",
   url: URL,
-  success: function(data){
+  success:
   //  console.log(JSON.stringify(data));
     //vsreport = data;
-    vsreport = data.;
-  },
+    reportToString
+  ,
   dataType: "json",
   });
 
-  return vsreport;
 }
 
 // vertify the website url is secure with https or not
@@ -91,6 +89,10 @@ function printfy(){
 
 }
 
+//
+function reportToString(data){
+  console.log(JSON.stringify(data));
+}
 // a main function to produce security report on a given url
 function produceReport(){
   // this is were most functions are called
@@ -103,5 +105,5 @@ function produceReport(){
 }
 
 
-
-console.log(virusTotalAPI());
+virusTotalAPI();
+//console.log(vtreport);
