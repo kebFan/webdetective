@@ -23,6 +23,7 @@
 var score = 0;
 var count = 0;   // # of tests applied
 var vtreport;   // virus total report
+var submitbtn = document.getElementById("submitbtn");
 
 // connect are report from google safe browsing api
 function googleSafeBrowsingAPI(){
@@ -76,11 +77,19 @@ function virusTotalAPI(){
 
 // vertify the website url is secure with https or not
 function vertifyHttps(urllink){
-  //
+  var result = 0;
+  if (urllink.indexOf("https") == 0){
+    result = 1;
+  }
+
+  return result;
 }
 
 // get website url the user entered on our website
 function getuserURL(){
+  var getText = document.getElementById("submitbtn").textContent;
+  console.log(getText);
+  return getText;
   // return url
 }
 
@@ -91,19 +100,67 @@ function printfy(){
 
 //
 function reportToString(data){
-  console.log(JSON.stringify(data));
+  var myJSON = data.scans;
+  const keys = Object.keys(myJSON);
+  var values = Object.values(myJSON);
+
+ //document.getElementById("demo").innerHTML = keys;
+ //  console.log(keys);
+ for( k in keys){
+    console.log(keys[k]);
+    var result = JSON.stringify(values[k]);
+    result = result.replace(/\"/g, ""); // removes "}" and ' "" '
+    result = result.replace(/\{|\}/g, "");
+    console.log(result); // object type
+ }
+
+
+ //const values = JSON.stringify(Object.values(myJSON));
+
+// document.getElementById("demo2").innerHTML = values.replace(/\"([^(\")"]+)\":/g,"$1:");
+
+ //var values = Object.values(myJSON);
+ //console.log(Object.entries[values]);
+
+
+}
+// aplity api
+// apikey 743fbefa-3674-49d0-98b3-a3fffda60657
+function apilityCheck(){
+
+  $.ajax({
+    type: "GET",
+    processData:"false",
+        url: 'https://api.apility.net/baddomain/google.com',
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("X-Auth-Token", "743fbefa-3674-49d0-98b3-a3fffda60657");
+        }, success: function(data){
+            alert(data);
+            //process the JSON data etc
+        }
+})
+
 }
 // a main function to produce security report on a given url
 function produceReport(){
   // this is were most functions are called
+  var enteredUrl; // the url the user want to check for
+  enteredUrl = getuserURL();
 
-  getuserURL();
-  vertifyHttps();
-  googleSafeBrowsingAPI();
+  vertifyHttps(enteredUrl);  // check if the url is http/s
+  //googleSafeBrowsingAPI();
   virusTotalAPI();
-  printify();
+  //printify();
 }
+// onclick listner
+submitbtn.addEventListener("click", getuserURL);
 
 
-virusTotalAPI();
-//console.log(vtreport);
+
+
+
+//produceReport();
+apilityCheck();
+
+// things left to do
+// when btn is clicked check url and print table

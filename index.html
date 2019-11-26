@@ -35,6 +35,8 @@ this is the main web page for web detective
       <div style="padding-left:16px">
         <h2>Web Detective</h2>
         <p>Some content..</p>
+        <img src="Webdetectivelogo.png" alt="Italian Trulli" class="center">
+
       </div>
       <link rel="stylesheet" type="text/css" href="style.css">
     </head>
@@ -47,12 +49,14 @@ this is the main web page for web detective
         <form action="main.js">
           URL:
           <input type="url" required class="url" name="website" placeholder='https://www.example.com' onclick="myFunction()">
-          <input type="submit" class="button" value="Sherlock Detect"><br>
+          <button type="button" class="button" id="submitbtn"> Detect Like Sherlock</button><br>
           <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
         </form><br><br>
         </div>
         <h2> Sample Test </h2>
 
+        <p id="demo"></p>
+        <p id="demo2"></p>
         <div id="sample">
       <table>
         <tr>

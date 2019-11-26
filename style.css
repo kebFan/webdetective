@@ -125,3 +125,12 @@ body {
       tr:hover {
           background-color: red;
       }
+img {
+	border-radius: 10%;
+	height: 100px;
+	width: 100px;
+}
+.center {
+	display: block;
+	margin: 0 auto;
+}
