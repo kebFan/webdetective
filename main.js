@@ -129,16 +129,19 @@ function reportToString(data){
 function apilityCheck(){
 
   $.ajax({
-    type: "GET",
-    processData:"false",
-        url: 'https://api.apility.net/baddomain/google.com',
-        beforeSend: function(xhr) {
-             xhr.setRequestHeader("X-Auth-Token", "743fbefa-3674-49d0-98b3-a3fffda60657");
-        }, success: function(data){
-            alert(data);
+        type: 'GET',
+        url: "https://api.apility.net/baddomain/google.com",
+      
+        headers:{
+              'X-Auth-Token':'743fbefa-3674-49d0-98b3-a3fffda60657',
+              'Accept': 'application/json'
+        },
+        contentType: 'application/json',
+        success: function(data){
+            console.log(data);
             //process the JSON data etc
         }
-})
+});
 
 }
 // a main function to produce security report on a given url
