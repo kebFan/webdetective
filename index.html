@@ -36,7 +36,6 @@ this is the main web page for web detective
         <h2>Web Detective</h2>
         <p>Some content..</p>
         <img src="Webdetectivelogo.png" alt="Italian Trulli" class="center">
-
       </div>
       <link rel="stylesheet" type="text/css" href="style.css">
     </head>
@@ -46,64 +45,67 @@ this is the main web page for web detective
     <center>
       <div class="url_getter">
         <p> Enter your website URL</p>
-        <form action="main.js">
+        <form>
           URL:
-          <input type="url" required class="url" name="website" placeholder='https://www.example.com' onclick="myFunction()">
-          <button type="button" class="button" id="submitbtn"> Detect Like Sherlock</button><br>
+          <input type="url" required class="url" name="website" placeholder='https://www.example.com'>
+          <input type="button" required id="submitbtn" class="button" value="Sherlock Detect" onclick="myFunction(); clearTable()"><br>
           <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
+
         </form><br><br>
         </div>
-        <h2> Sample Test </h2>
-
         <p id="demo"></p>
         <p id="demo2"></p>
         <div id="sample">
-      <table>
-        <tr>
-          <th>Scan Success</th>
-          <th>Test Performed</th>
-          <th>Rating</th>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Finger Print web server software</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Check the security of HTTP cookies</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Check the SSL certificate of the server</td>
-          <td>9</td>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Check for SQL Injection</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Check for Cross-Site Scripting</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>YES</td>
-          <td>Check for OS command Injection</td>
-          <td>3</td>
-        </tr>
-      </table>
-      </div>
+          <h2> Sample Test </h2>
+          <table>
+            <tr>
+              <th>Scan Success</th>
+              <th>Test Performed</th>
+              <th>Rating</th>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Finger Print web server software</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Check the security of HTTP cookies</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Check the SSL certificate of the server</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Check for SQL Injection</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Check for Cross-Site Scripting</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>YES</td>
+              <td>Check for OS command Injection</td>
+              <td>3</td>
+            </tr>
+          </table>
+        </div>
+        <div id="output" display="none">
+          <table id="put">
+
+          </table>
+        </div>
     </center>
 
     <!--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-      <script src="main.js"></script>
-      <script>
-        function myFunction() {
-          document.getElementById("sample").style.display = "none";
-        }
+
+      <script src="main.js">
+
       </script>
   </body>
 </html>

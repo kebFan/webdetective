@@ -94,9 +94,50 @@ function getuserURL(){
 }
 
 // a function to print a report in a readable format
-function printfy(){
+function printfyHead(){
 
+  // create elements <table> and a <tbody>
+  var table = document.getElementById("put");
+  var row = document.createElement("tr");
+
+  // put <table> in the <body>
+  var cell = document.createElement("th");
+  var cellText = document.createTextNode("Website Name");
+  cell.appendChild(cellText);
+  row.appendChild(cell);
+
+  var cell2 = document.createElement("th");
+  var cellText2 = document.createTextNode("Result");
+  cell2.appendChild(cellText2);
+  row.appendChild(cell2);
+
+  //row2.appendChild(cell2);
+  table.appendChild(row);
 }
+
+function printfyBody (val,key){
+  // cells creation
+  // table row creation
+  // create element <td> and text node
+  //Make text node the contents of <td> element
+  // put <td> at end of the table row
+  var table = document.getElementById("put");
+  var row = document.createElement("tr");
+  var cell = document.createElement("td");
+  var cell2 = document.createElement("td");
+  var cellText = document.createTextNode(key);
+  cell.appendChild(cellText);
+  row.appendChild(cell);
+  var cellText2 = document.createTextNode(val)
+  cell2.appendChild(cellText2);
+  row.appendChild(cell2);
+  //row added to end of table body
+  table.appendChild(row);
+}
+
+
+
+
 
 //
 function reportToString(data){
@@ -106,12 +147,16 @@ function reportToString(data){
 
  //document.getElementById("demo").innerHTML = keys;
  //  console.log(keys);
+ printfyHead();
  for( k in keys){
     console.log(keys[k]);
+    document.getElementById("demo").innerHTML = keys[k];
     var result = JSON.stringify(values[k]);
     result = result.replace(/\"/g, ""); // removes "}" and ' "" '
     result = result.replace(/\{|\}/g, "");
     console.log(result); // object type
+    document.getElementById("demo2").innerHTML = result;
+    printfyBody(result, keys[k]);
  }
 
 
@@ -131,7 +176,7 @@ function apilityCheck(){
   $.ajax({
         type: 'GET',
         url: "https://api.apility.net/baddomain/google.com",
-      
+
         headers:{
               'X-Auth-Token':'743fbefa-3674-49d0-98b3-a3fffda60657',
               'Accept': 'application/json'
@@ -156,14 +201,28 @@ function produceReport(){
   //printify();
 }
 // onclick listner
-submitbtn.addEventListener("click", getuserURL);
+//submitbtn.addEventListener("click", getuserURL);
 
+//THIS function removes the sample table based on a click
+function myFunction() {
+  document.getElementById("sample").style.display = "none";
 
+}
 
+// This function is supposed to get the url and start the producer report function
 
+submitbtn.addEventListener("click", produceReport);
 
+function clearTable()
+{
+ var tableRef = document.getElementById('put');
+ while ( tableRef.rows.length > 0 )
+ {
+  tableRef.deleteRow(0);
+ }
+}
 //produceReport();
-apilityCheck();
+//apilityCheck();
 
 // things left to do
 // when btn is clicked check url and print table
