@@ -4,45 +4,32 @@ this is the main web page for web detective
 
  <!DOCTYPE html>
  <html>
-   <head>
-      <meta charset="utf-8">
-      <script data-main="scripts/main"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-       <div class="navbar">
-        <a class="active" href="index.html">Home</a>
-        <a href="Features.html">Features</a>
-
-
-        <!-- <a href="Services.html"> fix the drop down when services is clicked  -->
-        <div class="dropdown">
-          <button class="dropbtn">Services
-            <i>&#9660</i>
-          </button>
-          <div class="dropdown-content">
-            <a href="#">Add Something here</a>
-            <a href="#">Add Something here</a>
-            <a href="#">Add Something here</a>
-          </div>
-        </div>
-        <a href="Contact.html">Contact</a>
-        <a href="About.html">About</a>
-      </div>
-      <!--
-        TItel doesnt work for some reason FIXXX
-      -->
-      <title>
-      </title>
-      <div style="padding-left:16px">
-        <h2>Web Detective</h2>
-        <img src="Webdetectivelogo.png" alt="Italian Trulli" class="center">
-      </div>
-      <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+ <head>
+    <meta charset="utf-8">
+    <script data-main="scripts/main"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <div class="navbar">
+      <a class="active" href="index.html">Ho❌e</a>
+      <a href="FutureGoals.html">Future Goals</a>
+      <!-- <a href="Services.html"> fix the drop down when services is clicked  -->
+      <a href="About.html">About</a>
+    </div>
+    <!--
+      TItel doesnt work for some reason FIXXX
+    -->
+    <title>
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
 
   <body>
     <center>
       <div class="url_getter">
+        <div class="logo">
+          <img src="Webdetectivelogo.png" alt="WebDetective logo" align="middle" style="margin:60px 0px 0px">
+        </div>
+        <h2>Web Detective</h2>
         <p> Enter your website URL</p>
         <form>
           URL:
@@ -50,47 +37,47 @@ this is the main web page for web detective
           <input type="button" required id="submitbtn" class="button" value="Sherlock Detect" onclick="myFunction(); clearTable()"><br>
           <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
 
-        </form><br><br>
+        </form>
         </div>
-        <p id="demo"></p>
         <p id="demo2"></p>
+        <center>
+          <h2>Idea Behind</h2>
+        <p>
+          WebDetective lets you scan URLs, and access finished scan reports of that URL.<br>
+          These reports co❌e fro❌ a lot different websites that do checks on URL if they are
+          ❌alicious,<br> our purpose is to show warnings on the sites a user is trying to access.<br><br>
+        </p>
+        </center>
         <div id="sample">
-          <h2> Sample Test </h2>
+          <h2> Sa❌ple Test </h2>
           <table>
             <tr>
-              <th>Scan Success</th>
-              <th>Test Performed</th>
-              <th>Rating</th>
+              <th>Website Na❌e</th>
+              <th>Result</th>
             </tr>
             <tr>
-              <td>YES</td>
-              <td>Finger Print web server software</td>
-              <td>5</td>
+              <td>Google Safebrowsing</td>
+              <td>detected:false,result:clean site</td>
             </tr>
             <tr>
-              <td>YES</td>
-              <td>Check the security of HTTP cookies</td>
-              <td>7</td>
+              <td>Phishtank</td>
+              <td>detected:false,result:clean site</td>
             </tr>
             <tr>
-              <td>YES</td>
-              <td>Check the SSL certificate of the server</td>
-              <td>9</td>
+              <td>Kaspersky</td>
+              <td>detected:true,result:malicious site</td>
             </tr>
             <tr>
-              <td>YES</td>
-              <td>Check for SQL Injection</td>
-              <td>10</td>
+              <td>MalwareDomainList</td>
+              <td>detected:false,result:clean site,detail:http://www.malwaredomainlist.com/mdl.php?search=www.hackthissite.orgn</td>
             </tr>
             <tr>
-              <td>YES</td>
+              <td>G-Data</td>
               <td>Check for Cross-Site Scripting</td>
-              <td>2</td>
             </tr>
             <tr>
-              <td>YES</td>
-              <td>Check for OS command Injection</td>
-              <td>3</td>
+              <td>Segasec</td>
+              <td>detected:false,result:unrated site</td>
             </tr>
           </table>
         </div>

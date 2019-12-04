@@ -84,12 +84,12 @@ function reportToString(data){
 
  for( k in keys){
     console.log(keys[k]);
-    document.getElementById("demo").innerHTML = keys[k];
+    //document.getElementById("demo2").innerHTML = keys[k];
     var result = JSON.stringify(values[k]);
     result = result.replace(/\"/g, ""); // removes "}" and ' "" '
     result = result.replace(/\{|\}/g, "");
     console.log(result); // object type
-    document.getElementById("demo2").innerHTML = result;
+    //document.getElementById("demo2").innerHTML = result;
     printfyBody(result, keys[k]);
  }
 
