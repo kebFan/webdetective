@@ -22,7 +22,3 @@ Once you do open the file then open index.html using chrome browser
 
 ### Step 6
 Input any URL of your desire and Sherlock Detect!
-
-
-Install this npm
-npm install @google-cloud/web-risk
