@@ -5,11 +5,6 @@
 // apis
 //------------------------------------------------------------------\\
 
-
-// variables used to calculate final score
-//var score = 0;
-//var count = 0;   // # of tests applied
-//var vtreport;   // virus total report
 var submitbtn = document.getElementById("submitbtn");
 var userURL = "";  // the url the user entered
 
@@ -27,8 +22,6 @@ function googleSafeBrowsingAPI(urllink){
     "platformTypes":    ["WINDOWS"],
     "threatEntryTypes": ["URL"],
     "threatEntries": [
-    //  {"url": "http://www.urltocheck1.org/"},
-    //  {"url": "http://www.urltocheck2.org/"},
       {"url": urllink}
     ]
   }
@@ -46,8 +39,6 @@ function googleSafeBrowsingAPI(urllink){
         console.log(" Website registerd as unsafe by google");
       }
   }
-  //data => console.log(JSON.stringify(data))
-
   ,dataType: "json",
   contentType : "application/json"
   });
@@ -64,8 +55,6 @@ function virusTotalAPI(urllink){
   type: "GET",
   url: URL,
   success:
-  //  console.log(JSON.stringify(data));
-    //vsreport = data;
     reportToString,
   dataType: "json",
   });
@@ -78,18 +67,14 @@ function reportToString(data){
   const keys = Object.keys(myJSON);
   var values = Object.values(myJSON);
 
- //document.getElementById("demo").innerHTML = keys;
- //  console.log(keys);
  printfyHead();
 
  for( k in keys){
     console.log(keys[k]);
-    //document.getElementById("demo2").innerHTML = keys[k];
     var result = JSON.stringify(values[k]);
     result = result.replace(/\"/g, ""); // removes "}" and ' "" '
     result = result.replace(/\{|\}/g, "");
     console.log(result); // object type
-    //document.getElementById("demo2").innerHTML = result;
     printfyBody(result, keys[k]);
  }
 
@@ -235,25 +220,3 @@ function clearTable()
   tableRef.deleteRow(0);
  }
 }
-
-// project map
-// steps
-
-// connect html and js
-// connect to the internet
-  // make js understand html button click
-//  when scan button is clicked
-  // show if the inpt is not valid website
-  // get website url as string fron the input tab
-  // check if the stirng is a website using REG EXP
-      // http_or_https_checker() method
-  // once we get the string url check for http and https
-    // add the result to the report table
-  // show loading buffer while the report is prossesed
-  // check each api
-      // google security check
-      // sql api
-      // ssl api
-      // more and
-// show the report in the page
-// downlodable report function

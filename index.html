@@ -1,27 +1,19 @@
-<!--
-this is the main web page for web detective
- -->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html>
  <head>
     <meta charset="utf-8">
     <script data-main="scripts/main"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <div class="navbar">
-      <a class="active" href="index.html">Ho❌e</a>
+      <a class="active" href="index.html">Home</a>
       <a href="FutureGoals.html">Future Goals</a>
-      <!-- <a href="Services.html"> fix the drop down when services is clicked  -->
       <a href="About.html">About</a>
     </div>
-    <!--
-      TItel doesnt work for some reason FIXXX
-    -->
     <title>
+      HomePage
     </title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-
 
   <body>
     <center>
@@ -35,8 +27,6 @@ this is the main web page for web detective
           URL:
           <input type="url" id="urluserenterd" required class="url" name="website" placeholder='https://www.example.com'>
           <input type="button" required id="submitbtn" class="button" value="Sherlock Detect" onclick="myFunction(); clearTable()"><br>
-          <input type="checkbox" required name="permission"> I accept the <a href="termsAndCondition.html">Terms and Conditions </a>!
-
         </form>
         </div>
         <p id="demo2"></p>
@@ -44,15 +34,15 @@ this is the main web page for web detective
           <h2>Idea Behind</h2>
         <p>
           WebDetective lets you scan URLs, and access finished scan reports of that URL.<br>
-          These reports co❌e fro❌ a lot different websites that do checks on URL if they are
-          ❌alicious,<br> our purpose is to show warnings on the sites a user is trying to access.<br><br>
+          These reports come from a lot different websites that do checks on URL if they are
+          malicious,<br> our purpose is to show warnings on the sites a user is trying to access.<br><br>
         </p>
         </center>
         <div id="sample">
-          <h2> Sa❌ple Test </h2>
+          <h2> Sample Test </h2>
           <table>
             <tr>
-              <th>Website Na❌e</th>
+              <th>Website Name</th>
               <th>Result</th>
             </tr>
             <tr>
@@ -83,15 +73,10 @@ this is the main web page for web detective
         </div>
         <div id="output" display="none">
           <table id="put">
-
           </table>
         </div>
     </center>
-
-    <!--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-
-      <script src="main.js">
-
-      </script>
+    <script src="main.js">
+    </script>
   </body>
 </html>
