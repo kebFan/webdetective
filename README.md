@@ -11,9 +11,9 @@ Install Moesif CORS add on for the browser and switch it on. you can find this a
 
 ### Step 3
 From terminal run:
-,,,
+```
   '$git clone https://github.com/kebFan/webdetective.git'
-,,,
+```
 ### Step 4
 Alternative for step 3 is downloading the project from our Github page it self which can be found at
 'https://github.com/kebFan/webdetective'
