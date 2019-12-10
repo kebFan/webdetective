@@ -168,6 +168,11 @@ function apilityCheck(urllink){
     //console.log(urllink);
   }
 
+  //remove last back slash
+  if(urllink[urllink.length - 1] == "/"){
+    urllink = urllink.substring(0,urllink.length - 1);
+  }
+
   $.ajax({
         type: 'GET',
         url: "https://api.apility.net/baddomain/" + urllink,
